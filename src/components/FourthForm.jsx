@@ -1,6 +1,6 @@
 import submitBg from "../assets/submitBg.svg";
 
-export default function FourthForm(countPage) {
+export default function FourthForm({ countPage, formik, setCountPage }) {
   return (
     <div
       className="form-content"
@@ -21,15 +21,15 @@ export default function FourthForm(countPage) {
         </div>
         <div className="rangeNumFull">4</div>
       </div>
-      <img src={submitBg} alt="#" />
-      <h3>Submit your quote request</h3>
-      <p>
-        Please review all the information you previously typed in the past
-        steps, and if all is okay, submit your message to receive a project
-        quote in 24 - 48 hours.
-      </p>
-      <button>Submit</button>
-
+      <div className="form-content-submit">
+        <img src={submitBg} alt="#" />
+        <h3 className="headerFourth">Submit your quote request</h3>
+        <p className="descriptionFourth">
+          Please review all the information you previously typed in the past
+          steps, and if all is okay, submit your message to receive a project
+          quote in 24 - 48 hours.
+        </p>
+      </div>
       <button
         className="previous-step"
         type="button"
@@ -37,6 +37,19 @@ export default function FourthForm(countPage) {
         onClick={() => setCountPage((prev) => prev - 1)}
       >
         Previous Step
+      </button>
+      <button
+        className="next-step"
+        type="button"
+        style={{
+          bottom: countPage === 4 ? "125px" : "-112px",
+          right: countPage === 4 ? "495px" : "-45px",
+        }}
+        onClick={() => {
+          console.log(formik.values);
+        }}
+      >
+        {countPage === 4 ? "Submit" : "Next Step"}
       </button>
     </div>
   );

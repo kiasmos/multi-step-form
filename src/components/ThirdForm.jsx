@@ -21,7 +21,6 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
         </div>
         <div className="rangeNumEmpty">4</div>
       </div>
-
       <div className="solid"></div>
       <div>
         <h3>What’s your project budget?</h3>
@@ -30,7 +29,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
         <div className="form-body">
           <article className="thirdpagearticle">
             <input
-              name="bugdet"
+              name="budget"
               id="5-10"
               value="5-10"
               type="radio"
@@ -44,7 +43,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
 
           <article className="thirdpagearticle">
             <input
-              name="bugdet"
+              name="budget"
               id="10-20"
               value="10-20"
               type="radio"
@@ -58,7 +57,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
 
           <article className="thirdpagearticle">
             <input
-              name="bugdet"
+              name="budget"
               id="20-50"
               value="20-50"
               type="radio"
@@ -72,7 +71,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
 
           <article className="thirdpagearticle">
             <input
-              name="bugdet"
+              name="budget"
               id="50"
               value="50"
               type="radio"
@@ -84,6 +83,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
             </label>
           </article>
         </div>
+        <div>{formik.errors.budget}</div>
       </div>
       <button
         className="previous-step"
@@ -103,7 +103,7 @@ export default function ThirdForm({ countPage, formik, setCountPage }) {
             formik.errors.email ||
             formik.errors.phone ||
             formik.errors.company
-          ) //1ci sehifedeki validation'lar duzgundurse pageCount 2 olur ve avtomatik 2ci component acilir
+          ) //1ci sehifedeki validation duzgundurse pageCount 2 olur
             ? () => {
                 setCountPage(2);
               }

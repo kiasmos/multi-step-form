@@ -119,6 +119,29 @@ input:focus {
   margin: 30px 0 30px 0;
 }
 
+.error-name {
+  position: absolute;
+  top: 79px;
+  color: red;
+}
+.error-email {
+  position: absolute;
+  top: 79px;
+  right: 115px;
+  color: red;
+}
+.error-phone {
+  position: absolute;
+  top: 182px;
+  color: red;
+}
+.error-company {
+  position: absolute;
+  top: 79px;
+  right: 115px;
+  color: red;
+}
+
 .form-content h3 {
   font-weight: 700;
   font-size: 24px;
@@ -207,6 +230,7 @@ input:focus {
 }
 
 .firstpageinputs {
+  position: relative;
   padding: 3%;
   width: 200px;
   height: 50px;
@@ -307,25 +331,33 @@ input:focus {
 
 /* style={{ display: "none" }} */
 
-.fourthPage {
-  display: none;
+.form-content-submit {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding-bottom: 150px;
-  > img {
-    height: 140px;
-  }
-  .headerFourth {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 35px;
-    color: #170f49;
-  }
-  .descriptionFourth {
-    font-size: 18px;
-    line-height: 30px;
-    text-align: center;
-    color: #6f6c90;
-  }
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.form-content-submit > img {
+  width: 120px;
+}
+
+.form-content-submit .headerFourth {
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: #170f49;
+}
+
+.form-content-submit .descriptionFourth {
+  width: 380px;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #6f6c90;
 }

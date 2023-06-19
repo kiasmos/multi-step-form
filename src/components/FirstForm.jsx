@@ -40,6 +40,9 @@ export default function FormFirst({ countPage, formik, setCountPage }) {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          <small className="error-name">
+            {formik.touched.name && formik.errors.name && formik.errors.name}
+          </small>
 
           <label htmlFor="email" className="email">
             Email
@@ -54,6 +57,9 @@ export default function FormFirst({ countPage, formik, setCountPage }) {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          <small className="error-email">
+            {formik.touched.email && formik.errors.email && formik.errors.email}
+          </small>
 
           <label htmlFor="phone" className="number">
             Phone Number
@@ -68,6 +74,9 @@ export default function FormFirst({ countPage, formik, setCountPage }) {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          <small className="error-phone">
+            {formik.touched.phone && formik.errors.phone && formik.errors.phone}
+          </small>
 
           <label htmlFor="company" className="compname">
             Company
@@ -82,6 +91,11 @@ export default function FormFirst({ countPage, formik, setCountPage }) {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          <small className="error-company">
+            {formik.touched.company &&
+              formik.errors.company &&
+              formik.errors.company}
+          </small>
         </div>
       </div>
       <button
@@ -94,7 +108,7 @@ export default function FormFirst({ countPage, formik, setCountPage }) {
             formik.errors.email ||
             formik.errors.phone ||
             formik.errors.company
-          ) //1ci sehifedeki validation'lar duzgundurse pageCount 2 olur ve avtomatik 2ci component acilir
+          ) //1ci sehifedeki validation duzgundurse pageCount 2 olur
             ? () => {
                 setCountPage(2);
               }

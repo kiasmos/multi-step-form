@@ -113,11 +113,11 @@ export default function SecondForm({ countPage, formik, setCountPage }) {
             formik.errors.email ||
             formik.errors.phone ||
             formik.errors.company
-          ) //1ci sehifedeki validation'lar duzgundurse pageCount 2 olur ve avtomatik 2ci component acilir
+          ) //1ci sehifedeki validation duzgundurse pageCount 2 olur
             ? () => {
                 setCountPage(2);
               }
-            : countPage === 2 && formik.values.length !== 0 //2ci sehifedeki checkboxlardan azi 1i doludursa PageCount 3 olur
+            : countPage === 2 && formik.values.services.length !== 0 //2ci sehifedeki checkboxlardan azi 1i doludursa PageCount 3 olur
             ? () => {
                 setCountPage(3);
               }

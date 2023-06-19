@@ -3,7 +3,7 @@ import FirstForm from "./components/FirstForm";
 import SecondForm from "./components/SecondForm";
 import ThirdForm from "./components/ThirdForm";
 import FourthForm from "./components/FourthForm";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -12,15 +12,14 @@ export default function App() {
   const [countPage, setCountPage] = useState(1);
 
   const validation = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string().required("*Name is required"),
     email: Yup.string("*Only text")
-      .required("*Required")
+      .required("*Email is required")
       .email("*Not an email"),
     phone: Yup.string("*Not a number")
-      .required("*Required")
-      .min(10, "*Min 5")
-      .max(10, "*Max 10"),
-    company: Yup.string("*Only text").required("*Required"),
+      .required("*Number is required")
+      .min(10, "*Min 5"),
+    company: Yup.string("*Only text"),
     services: Yup.array().min(1, "*You have to select at least one."),
     budget: Yup.string().required("*Please select an option."),
   });
